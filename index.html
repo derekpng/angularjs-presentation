@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>AngularJS - A Superheroic Javascript MVW Framework Presentation</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom User Theme -->
+		<link rel="stylesheet" href="lib/css/styles.css" />
+		<link href="plugin/jquery-ui/jquery-ui.css" rel="stylesheet">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="http://fast.fonts.net/jsapi/e9ed0364-e4f6-4dd1-a959-ee4624bbdf82.js"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="background-01 title" data-background="#582976">
+					<h1>AngularJS</h1>
+					<h2><span class="highlight">Superheroic</span> Javascript MVW Framework</h3>
+					<p>
+						<small>Created by <span class="emphasize-text">Derek Ng</span> <br /> September 29, 2014</small>
+					</p>
+				</section>
+
+				<section class="background-01" data-background="#582976">
+					<h1>AngularJS - What is it?</h1>
+					
+					<ul>
+						<li>Developed in 2009 by Mi&#353;ko Hevery and Adam Abrons</li>
+						<li>Open-source <span class="emphasize-text">web application framework</span></li>
+						<li>Maintained by Google and the community</li>
+						<li>Aimed at simplifying development of <span class="emphasize-text">single-page</span> applications</li>
+						<li>Built around the belief that <span class="emphasize-text">declarative programming</span> is best for building UI components, while <span class="emphasize-text">imperative programming</span> is excellent for expressing application logic</li>
+						<li>Does this by <span class="highlight">decoupling DOM manipulations from application logic</span></li>
+					</ul>
+					
+				</section>
+
+				<section class="background-02" data-background="#20aebf">
+					<section>
+						<h1>It's All About Decoupling</h1>
+						
+						<ul>
+							<li>MVC is a way of programming that keeps the <span class="highlight">model, view, and controller</span> separated</li>
+							<li><span class="emphasize-text">Model (M)</span>&mdash;code that manages the data, logic, and rules of the application</li>
+							<li><span class="emphasize-text">View (V)</span>&mdash;code that generates the output representation of information (i.e., what the user sees)</li>
+							<li><span class="emphasize-text">Controller (C)</span>&mdash;code that accepts user input to affect the model and/or view</li>
+						</ul>
+					</section>
+
+					<section>
+						
+						<svg id="figure-MVC" xmlns="http://www.w3.org/2000/svg" version="1.1" width="960" height="841"> 
+
+						<polygon points="480,505 192,168 768,168"></polygon>
+
+							<g>
+								<circle cy="505" cx="480" r="65"></circle>
+								<text class="heading" x="480" y="512" text-anchor="middle">View</text>
+
+								<text x="480" y="620" text-anchor="middle">User fills out a form and submits it</text>
+							</g>
+
+							<g>
+								<circle cy="168" cx="192" r="65"></circle>
+								<text class="heading" x="192" y="175" text-anchor="middle">Model</text>
+								<text x="192" y="75" text-anchor="middle">Form data is stored</text>
+							</g>
+
+							<g>
+								<circle cy="168" cx="768" r="65"></circle>
+								<text class="heading" x="768" y="175" text-anchor="middle">Controller</text>
+								<text x="768" y="75" text-anchor="middle">Form is validated</text>
+							</g>
+
+							<text class="figure-heading" x="50%" y="300" text-anchor="middle">MVC</text>
+
+							<polygon id="figure-MVC-arrowhead" points="0,17 13,0 26,17" transform="translate(270,195) rotate(-90) scale(2)"></polygon>
+
+							<polygon id="figure-MVC-arrowhead" points="0,17 13,0 26,17" transform="translate(445,420) rotate(-225) scale(2)"></polygon>
+
+							<polygon id="figure-MVC-arrowhead" points="0,17 13,0 26,17" transform="translate(700,210) rotate(45) scale(2)"></polygon>
+						</svg>
+
+					</section>
+		
+				</section>
+
+				<section class="background-03" data-background="rgb(193, 12, 110)">
+					<section>
+							<h1>What's Wrong with Vanilla jQuery?</h1>
+							
+							<p>Nothing. It's like <span class="highlight">comparing apples to oranges</span>. jQuery is intended to be a DOM manipulation library, and, as such, there is no strict separation of Model, View, and Controller code. This tends to make application code bases:</p>
+							<ul>
+								<li><span class="emphasize-text">Larger</span>&mdash;more lines of code</li>
+								<li><span class="emphasize-text">More difficult to read</span>&mdash;due to the mixing of Model, View, and Controller code</li>
+								<li><span class="emphasize-text">More difficult to maintain</span>&mdash;since it is not very modular</li>
+							</ul>
+							<p>This is significant for large, complex applications.</p>
+					</section>
+
+					<section>
+
+							<h1 class="center">jQuery&mdash;Implicit programming</h1>
+							<h3>Javascript</h3>
+							<pre><code class="javascript" data-trim>
+
+// This is an array storing the data
+people = [
+	{name: 'Santa Claus', age: 539, gender: 'male'},
+	{name: 'Yeti', age: 18, gender: 'unknown'},
+	{name: 'Fairy Godmother', age: 'unknown', gender: 'female'}
+];
+// This code generates the HTML table rows with the above data incorporated
+var i, html = '';
+for (i = 0; i &lt; people.length; i++) {
+	html += '&lt;tr&gt;';
+	html += '&lt;td&gt;' + people[i].name + '&lt;/td&gt;';
+	html += '&lt;td&gt;' + people[i].age + '&lt;/td&gt;';
+	html += '&lt;td&gt;' + people[i].gender + '&lt;/td&gt;';
+	html += '&lt;/tr&gt;';
+}
+$('#table-data').html(html); // Insert into html page
+
+    					</code></pre>
+
+    					<h3>HTML</h3>
+							<pre><code class="html" data-trim>
+
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Name&lt;/th&gt;
+		&lt;th&gt;Age&lt;/th&gt;
+		&lt;th&gt;Gender&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tbody id="table-data"&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+    					</code></pre>
+					</section>
+
+					<section>
+
+							<h1 class="center">AngularJS&mdash;Declarative Programming</h1>
+							<h3>Javascript</h3>
+							<pre><code class="javascript" data-trim>
+
+// This is the model -- i.e., where the data is stored; any changes 
+// to this data will automatically update the HTML (view)
+$scope.people = [
+	{name: 'Santa Claus', age: 539, gender: 'male'},
+	{name: 'Yeti', age: 18, gender: 'unknown'},
+	{name: 'Fairy Godmother', age: 'unknown', gender: 'female'}
+];
+
+    					</code></pre>
+
+    					<h3>HTML</h3>
+							<pre><code class="html" data-trim>
+
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Name&lt;/th&gt;
+		&lt;th&gt;Age&lt;/th&gt;
+		&lt;th&gt;Gender&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;tbody&gt;
+		&lt;tr ng-repeat="person in people"&gt;
+			&lt;td&gt;{{person.name}}&lt;/td&gt;
+			&lt;td&gt;{{person.age}}&lt;/td&gt;
+			&lt;td&gt;{{person.gender}}&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+    					</code></pre>
+					</section>
+
+				</section>
+
+				<section class="background-01" data-background="#582976">
+					<section>
+						<h1>Say Goodbye to HTML Hacking</h1>
+						<p>We often hack HTML in order to make it do something that is <span class="highlight">not included in the box</span>. For example, if we want to make a tabbed panel:</p>
+
+						<div id="tabs" style="width: 50%; background: none; margin: 50px auto 0 auto;">
+						  <ul style="margin-bottom: -7px; background: none;">
+						    <li style="border-left: none;"><a href="#fragment-1">One</a></li>
+						    <li style="border-left: none;"><a href="#fragment-2">Two</a></li>
+						    <li style="border-left: none;"><a href="#fragment-3">Three</a></li>
+						  </ul>
+						  <div id="fragment-1" style="background-color: white;">
+						    Hi.
+						  </div>
+						  <div id="fragment-2" style="background-color: white;">
+						    Hello.
+						  </div>
+						  <div id="fragment-3" style="background-color: white;">
+						    Bonjour.
+						  </div>
+						</div>
+
+					</section>
+
+					<section>
+						<h1 class="center">Non-ideal HTML</h1>
+							<pre><code class="html" data-trim>
+
+&lt;div id="tabs"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#fragment-1"&gt;One&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#fragment-2"&gt;Two&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#fragment-3"&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="fragment-1"&gt;
+    Hi.
+  &lt;/div&gt;
+  &lt;div id="fragment-2"&gt;
+    Hello.
+  &lt;/div&gt;
+  &lt;div id="fragment-3"&gt;
+    Bonjour.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+	    				</code></pre>
+						
+						<p>This code is hard to read, because its <span class="emphasize-text">intent/semantics</span> is not clear.</p>
+					</section>
+
+					<section>
+						<h1 class="center">Ideal HTML</h1>
+							<pre><code class="html" data-trim>
+
+&lt;tabs&gt;
+  &lt;pane title="One"&gt;
+    Hi.
+  &lt;/pane&gt;
+  &lt;pane title="Two"&gt;
+    Hello.
+  &lt;/pane&gt;
+  &lt;pane title="Three"&gt;
+    Bonjour.
+  &lt;/pane&gt;
+&lt;/tabs&gt;
+
+	    				</code></pre>
+						
+						<p>AngularJS allows you to make your own <span class="emphasize-text">semantic, reusable HTML components</span>. <span class="highlight">Declarative programming</span> for the win!</p>
+					</section>
+				</section>
+
+				<section class="background-02" data-background="#20aebf">
+					<section>
+						<h1>Putting It To The Test</h1>
+						<p>Create an application two ways:</p>
+						<ul>
+							<li><a href="http://value-scale.herokuapp.com" target="_blank">jQuery</a><span class="emphasize-text fragment">&mdash;59 lines</span></li>
+							<li><a href="http://value-scale-angular.herokuapp.com" target="_blank">AngularJS</a><span class="emphasize-text fragment">&mdash;34 lines</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>Now It's Your Turn!</h1>
+						
+						<p>Go to the <a href="http://bit.ly/angularjs-demo" target="_blank">demo</a>&mdash;<span class="emphasize-text">bit.ly/angularjs-demo</span></p>
+					</section>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+		<script src="plugin/jquery-ui/external/jquery/jquery.js"></script>
+		<script src="plugin/jquery-ui/jquery-ui.js"></script>
+		<script>
+			$( "#tabs" ).tabs();
+			// Hover states on the static widgets
+			$( "#dialog-link, #icons li" ).hover(
+				function() {
+					$( this ).addClass( "ui-state-hover" );
+				},
+				function() {
+					$( this ).removeClass( "ui-state-hover" );
+				}
+			);
+		</script>
+
+	</body>
+</html>

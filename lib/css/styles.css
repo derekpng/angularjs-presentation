@@ -1,0 +1,201 @@
+body {
+  font-size: 32px;
+  line-height: 1.6rem;
+  color: white;
+  font-family:'Klint LT W01 Light';
+}
+
+::selection {
+  background: black; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: black; /* Gecko Browsers */
+}
+
+.reveal h1 {
+  font-family:'Loft W01 Regular';
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 4rem;
+
+}
+
+.reveal .title h1 {
+  font-size: 16rem;
+  text-align: center;
+}
+
+
+
+.reveal h2 {
+  font-family:'KlintLTW01-LightCondens 722684';
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.reveal .title h2 {
+  font-size: 4rem;
+}
+
+.reveal h3 {
+  font-size: 1.5rem;
+}
+
+.reveal p {
+  text-align: left;
+}
+
+.reveal .title p {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.reveal ul {
+  list-style-type: none;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.reveal li {
+
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.reveal li:last-of-type {
+  padding-bottom: 0;
+}
+
+
+.reveal .emphasize-text {
+  font-family:'Klint LT W01 Bold';
+
+}
+
+.reveal pre {
+  margin-bottom: 2rem;
+}
+
+.reveal a:link {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 2.5px;
+  border-bottom: 3px solid white;
+}
+
+.reveal a:hover, .reveal a:focus {
+  border-bottom: none;
+}
+
+.reveal a:active, .reveal a:visited {
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+
+/*
+ *
+ * FIGURE STYLES
+ *
+ */
+
+/* MVC Figure */
+#figure-MVC circle {
+  fill: #e00f80;
+  stroke: white;
+  stroke-width: 10px;  
+}
+
+#figure-MVC polygon {
+  fill: #20aebf;
+  stroke: white;
+  stroke-width: 10px;  
+}
+
+#figure-MVC text {
+  font-family:'KlintLTW01-LightCondens 722684';
+  fill: white;
+  font-size: 2rem;
+}
+
+#figure-MVC text.heading {
+  font-family:'Klint LT W01 Bold';
+  fill: white;
+  font-size: 1.4rem;
+}
+
+#figure-MVC text.figure-heading {
+  font-family:'Klint LT W01 Bold';
+  fill: white;
+  font-size: 3rem;
+}
+
+#figure-MVC polygon#figure-MVC-arrowhead {
+  fill: white;
+  stroke: none;
+}
+
+
+
+
+/*
+ *
+ * BACKGROUND DEPENDENT STYLES
+ *
+ */
+
+/* background-01 */
+.reveal .background-01 li {
+    border-left: 1rem solid rgb(193, 12, 110);
+}
+.reveal .background-01 .emphasize-text {
+    color: #39c7d8;
+}
+
+.reveal .background-01 .highlight {
+  background-color: rgb(193, 12, 110);
+}
+
+/* background-02 */
+.reveal .background-02 li {
+    border-left: 1rem solid #e00f80;
+}
+.reveal .background-02 .emphasize-text {
+    color: #fbe630;
+}
+
+.reveal .background-02 .highlight {
+  background-color: #e00f80;
+}
+
+/* background-03 */
+.reveal .background-03 li {
+    border-left: 1rem solid #10b3c6;
+}
+.reveal .background-03 .emphasize-text {
+    color: #d1f317;
+}
+
+.reveal .background-03 .highlight {
+  background-color: #10b3c6;
+}
+
+/*
+ *
+ * UTILITY STYLES
+ *
+ */
+
+ .reveal .float-left {
+  float: left;
+ }
+
+ .reveal .float-left {
+  float: right;
+ }
+
+ .reveal .center {
+  text-align: center;
+ }
